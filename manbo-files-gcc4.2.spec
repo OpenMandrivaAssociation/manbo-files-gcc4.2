@@ -64,17 +64,17 @@ test "%{_real_vendor}" = "%{manbo_vendor}" && /bin/false
 
 %build
 
-mkdir -p $RPM_BUILD_ROOT/%{_bindir}/
+mkdir -p %{buildroot}/%{_bindir}/
 for i in c++ g++ gcj gcc gcc-%{version} gfortran gcjh; do
-   ln -sf %{manbo_platform}-$i $RPM_BUILD_ROOT/%{_bindir}/%{_target_platform}-$i
+   ln -sf %{manbo_platform}-$i %{buildroot}/%{_bindir}/%{_target_platform}-$i
 done
 
-mkdir -p $RPM_BUILD_ROOT/%{gcc_libdir}/%{_target_platform}
+mkdir -p %{buildroot}/%{gcc_libdir}/%{_target_platform}
 ln -sf ../%{manbo_platform}/%{version} \
- $RPM_BUILD_ROOT/%{gcc_libdir}/%{_target_platform}/%{version}
+ %{buildroot}/%{gcc_libdir}/%{_target_platform}/%{version}
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files -n manbo-%{_real_vendor}-files-gcc%{program_suffix}
 %{_bindir}/%{_target_platform}-gcc
