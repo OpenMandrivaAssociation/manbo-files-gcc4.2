@@ -11,7 +11,7 @@ Version:	4.2.3
 Release:	%{manbo_mkrel 7}
 License:	GPLv3+
 Group:		Development/C
-URL:		http://manbo-labs.mandriva.com/
+URL:		https://manbo-labs.mandriva.com/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
